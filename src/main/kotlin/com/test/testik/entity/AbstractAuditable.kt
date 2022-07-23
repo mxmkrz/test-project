@@ -8,14 +8,14 @@ import org.springframework.data.relational.core.mapping.Column
 import java.time.OffsetDateTime
 import java.util.UUID
 
-abstract class AbstractAuditable(givenId: UUID) {
+abstract class AbstractAuditable(givenId: UUID?) {
 
     /**
      * Record ID
      */
     @Id
     @Column("id")
-    open var id: UUID? = null
+    open var id: UUID? = givenId
 
     /**
      * Record version
