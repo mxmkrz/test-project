@@ -1,0 +1,13 @@
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://127.0.0.1:5436/test
+    username: username
+    password: password
+
+logging:
+  level:
+    root: INFO
+    com.parity.ogm: DEBUG
+server:
+  port: 8085
