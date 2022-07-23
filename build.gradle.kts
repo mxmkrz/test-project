@@ -26,9 +26,15 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.springframework:spring-jdbc")
 	runtimeOnly("org.postgresql:postgresql")
-	runtimeOnly("org.postgresql:r2dbc-postgresql")
+// https://mvnrepository.com/artifact/io.r2dbc/r2dbc-postgresql
+	implementation("io.r2dbc:r2dbc-postgresql:1.0.0.M5")
+	// https://mvnrepository.com/artifact/io.r2dbc/r2dbc-postgresql
+	implementation("io.r2dbc:r2dbc-postgresql:0.8.10.RELEASE")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+
+	// https://mvnrepository.com/artifact/com.google.auto.service/auto-service
+	implementation("com.google.auto.service:auto-service:1.0.1")
 }
 
 tasks.withType<KotlinCompile> {
