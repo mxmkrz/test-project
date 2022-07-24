@@ -26,8 +26,22 @@ fun UserEntity.toDto() = UserDto(
     modifiedAt = modifiedAt
 )
 
+fun UserEntity.merge(userDto: UserDto) {
+    searchProfile = getSearchProfile(userDto.searchProfile)
+    searchId = userDto.searchId
+    searchRef = userDto.searchRef
+    isMonitored = userDto.isMonitored
+}
 
-fun getSearchProfile(searchProfile:String?) : SearchProfileEnum? {
+fun UserEntity.patch(userDto: UserDto) {
+    searchProfile = getSearchProfile(userDto.searchProfile) ?: searchProfile
+    searchId = userDto.searchId ?: searchId
+    searchRef = userDto.searchRef ?: searchRef
+    isMonitored = userDto.isMonitored ?: isMonitored
+}
+
+
+fun getSearchProfile(searchProfile: String?): SearchProfileEnum? {
     return searchProfile?.let {
         SearchProfileEnum.valueOf(it)
     }

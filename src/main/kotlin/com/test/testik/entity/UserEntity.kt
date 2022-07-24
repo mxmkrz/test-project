@@ -2,6 +2,7 @@ package com.test.testik.entity
 
 import com.test.testik.entity.enumerator.SearchProfileEnum
 import org.springframework.data.annotation.PersistenceConstructor
+import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 import java.util.*
 
@@ -12,7 +13,7 @@ class UserEntity @PersistenceConstructor constructor(
 
     var userId: UUID,
 
-    var searchProfile: SearchProfileEnum?,
+    var searchProfile: SearchProfileEnum? = null,
 
     var searchId: String?,
 

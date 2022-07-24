@@ -11,10 +11,12 @@ spring:
       max-idle-time: 1m
       max-size: 30
   flyway:
+    enabled: true
+    baseline-on-migrate: true
     url: jdbc:postgresql://127.0.0.1:5430/test-db
     user: username
     password: password
-#    baseline-on-migrate: true
+    validate-migration-naming: true
 
 logging:
   level:
