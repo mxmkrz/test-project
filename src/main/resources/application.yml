@@ -1,9 +1,22 @@
 
 spring:
   r2dbc:
-    url: r2dbc:postgresql://127.0.0.1:5436/test
+    url: r2dbc:postgresql://127.0.0.1:5430/test-db
     username: username
     password: password
+    pool:
+      validation-query: SELECT 1
+      enabled: true
+      initial-size: 10
+      max-idle-time: 1m
+      max-size: 30
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:postgresql://127.0.0.1:5430/test-db
+    user: username
+    password: password
+    validate-migration-naming: true
 
 logging:
   level:
